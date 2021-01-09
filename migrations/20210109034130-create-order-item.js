@@ -11,21 +11,21 @@ module.exports = {
       productId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        reference: {
+        references: {
           model: "Products",
-          key: "id",
-        },
-      },
-      orderId: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        reference: {
-          model: "Orders",
           key: "id",
         },
       },
       quantity: {
         type: Sequelize.INTEGER,
+      },
+      orderId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Orders",
+          key: "id",
+        },
       },
       createdAt: {
         allowNull: false,
